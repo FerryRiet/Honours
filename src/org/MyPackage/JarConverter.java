@@ -43,7 +43,7 @@ public class JarConverter extends M3Converter {
 		}
 
 		private String extractClassName(ISourceLocation jarLoc) {
-			return jarFile + jarLoc.getPath().substring(jarLoc.getPath().indexOf("!")+1);
+			return jarLoc.getPath().substring(jarLoc.getPath().indexOf("!")+1);
 		}
 
 		public ASMClassConverter(int api, ClassVisitor cv, ISourceLocation jarLoc) {
@@ -116,7 +116,8 @@ public class JarConverter extends M3Converter {
 		public MethodVisitor visitMethod(int access, String name, String desc,
 				String signature, String[] exceptions) {
 			try {
-				JarConverter.this.insert(JarConverter.this.documentation, values.sourceLocation("java+method", new java.net.URI(ClassFile).getPath(), "/"+name), values.sourceLocation(ClassFile));
+				System.out.println(jarFile);
+				JarConverter.this.insert(JarConverter.this.documentation, values.sourceLocation("java+method","", ClassFile+"/" +name), values.sourceLocation(ClassFile));
 			} catch (URISyntaxException e) {
 				// TODO Auto-generated catch block
 				throw new RuntimeException("Should not happen", e);
