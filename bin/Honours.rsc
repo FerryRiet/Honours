@@ -13,8 +13,9 @@ public M3 Dof() {
 	return m3project ;
 }
 public M3 Do(){
-	loc gauva = |jar:///Users/ferryrietveld/Hon/Honours/lib/m3start.jar!|;
+	//loc gauva = |jar:///Users/ferryrietveld/Hon/Honours/lib/m3start.jar!|;
 	loc log =   |file:///Users/ferryrietveld/Hon/Honours/lib/log.txt|;
+    lov gauva = |jar:///Users/ferryrietveld/Hon/Honours/lib/m3start.jar!/m3startv2/m3Interface.class| ;
 
 	M3 m3Project = createM3FromJar2(gauva);
 	iprintToFile(log, m3Project);
