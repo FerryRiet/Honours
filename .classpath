@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/ClassParser"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/Honours/JARS/org.eclipse.imp.pdb_0.4.0.201311051646.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/Honours/JARS/org.eclipse.imp.pdb.values_0.4.1.201311061716.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt_3.9.0.v20130911-1000.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.ui_3.9.1.v20130820-1427.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.launching_3.7.0.v20130515-1451.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.junit4.runtime_1.1.300.v20130514-0733.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.junit_3.7.200.v20130514-0733.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.junit.runtime_3.4.400.v20130514-0733.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.junit.core_3.7.200.v20130514-1154.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.doc.user_3.9.0.v20130604-1813.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.debug.ui_3.6.200.v20130514-0841.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.core_3.9.1.v20130905-0837.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.core.manipulation_1.5.0.v20130605-1748.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.compiler.tool_1.0.200.v20130530-1010.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.compiler.apt_1.0.600.v20130530-1010.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.apt.ui_3.3.300.v20120516-0617.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.apt.pluggable.core_1.0.400.v20120516-0617.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.apt.core_3.3.500.v20120516-0617.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.jdt.annotation_1.1.0.v20130513-1648.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/eclipse/plugins/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/Honours/JARS/asm-4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chiel/Documents/Evolution/Honours/JARS/asm-tree-4.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
