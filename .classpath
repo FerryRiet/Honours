@@ -3,7 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/ClassParser"/>
 	<classpathentry kind="lib" path="lib/asm-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/asm-tree-4.0.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"/>
