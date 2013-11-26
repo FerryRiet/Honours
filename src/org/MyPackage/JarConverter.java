@@ -73,6 +73,8 @@ public class JarConverter extends M3Converter {
 		try {
 			for (int i = 0; i < methods.size(); ++i) {
 				MethodNode method = methods.get(i);
+				System.out.println(new String("Signature :" ) + method.name + " "  + method.signature + method.desc) ;
+				
 				JarConverter.this.insert(JarConverter.this.declarations, values.sourceLocation("java+method", jarFile, "/" + method.name), values.sourceLocation(jarFile));
 			}
 		} catch (Exception e) {
@@ -87,20 +89,19 @@ public class JarConverter extends M3Converter {
 				FieldNode field = fields.get(i);
 				System.out.println("Debug.......");
 				this.insert(this.declarations, values.sourceLocation("java+field", jarFile, "/" + field.name), values.sourceLocation(jarFile));
-				this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("bummer()"));							
 				
 				switch(field.access) {
 					case Opcodes.ACC_PUBLIC :
-						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("public()"));
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), constructModifierNode("public") );
 						break ;						
 					case Opcodes.ACC_PRIVATE :
-						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("private()"));
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), constructModifierNode("private"));
 						break ;						
 					case Opcodes.ACC_PROTECTED :
-						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("protected()"));
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), constructModifierNode("protected"));
 						break ;		
 					default :
-							this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("bummer()"));							
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("bummer"));							
 				}
 			}
 		} catch (Exception e) {
