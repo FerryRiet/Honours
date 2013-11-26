@@ -63,10 +63,8 @@ public class JarConverter extends M3Converter {
 			emitFields(cn.fields) ;
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			throw new RuntimeException("Should not happen", e);
 		}
 	}
@@ -81,12 +79,29 @@ public class JarConverter extends M3Converter {
 			e.printStackTrace();
 		}
 	}
+	
     //   <|java+field:///m3startv2/Main/intField|,|project://m3startv2/src/m3startv2/Main.java|(54,13,<5,12>,<5,25>)>,
 	private void emitFields(List<FieldNode> fields) {
 		try {
 			for (int i = 0; i < fields.size(); ++i) {
 				FieldNode field = fields.get(i);
-				JarConverter.this.insert(JarConverter.this.declarations, values.sourceLocation("java+field", jarFile, "/" + field.name), values.sourceLocation(jarFile));
+				System.out.println("Debug.......");
+				this.insert(this.declarations, values.sourceLocation("java+field", jarFile, "/" + field.name), values.sourceLocation(jarFile));
+				this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("bummer()"));							
+				
+				switch(field.access) {
+					case Opcodes.ACC_PUBLIC :
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("public()"));
+						break ;						
+					case Opcodes.ACC_PRIVATE :
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("private()"));
+						break ;						
+					case Opcodes.ACC_PROTECTED :
+						this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("protected()"));
+						break ;		
+					default :
+							this.insert(this.modifiers, values.sourceLocation("java+field", jarFile, "/" + field.name), values.string("bummer()"));							
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
