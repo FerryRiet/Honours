@@ -26,7 +26,13 @@ public M3 createM3FromJar2(loc jarFile) {
     jarName = substring(jarName, findLast(jarName, "/")+1);
     loc jarLoc = |jar:///|;
     jarLoc.authority = jarName;
-    return composeJavaM3(jarLoc , { createM3FromJarClasss(jarClass) | loc jarClass <- crawl(jarFile, "class") });
+    
+    M3 m3Project = composeJavaM3(jarLoc , { createM3FromJarClasss(jarClass) | loc jarClass <- crawl(jarFile, "class") });
+    //Fill methodOverrides
+    rel[loc,loc] allRel = m3Project@extends + m3Project@implements;
+    allRel = allRel+;
+	m3Project@methodOverrides = {<m1,m2> | <c1,m1> <- m3Project@containment, <c2,m2> <- m3Project@containment, <c1,c2> in allRel, substring(m1.path,findLast(m1.path,"/")+1) == substring(m2.path,findLast(m2.path,"/")+1)};
+ 	return m3Project; 
 }
 
 public list[loc] createClassList(loc jarFile) {

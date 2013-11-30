@@ -51,12 +51,15 @@ public class JarConverter extends M3Converter {
 
 			this.insert(this.declarations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation(jarFile));
 			
-			this.insert(this.extendsRelations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation("java+class" , "" , cn.superName));
+			this.insert(this.extendsRelations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation("java+class" , jarFile, "/" + cn.superName));
 
 			//  @implements={<|java+class:///m3startv2/viaInterface|,|java+interface:///m3startv2/m3Interface|>},
 			for (int i = 0; i < cn.interfaces.size(); ++i) {
 				String iface = (String) cn.interfaces.get(i) ;
-				this.insert(this.implementsRelations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation("java+interface", jarFile, "/" + iface));
+
+				//until we find a way to recognize interfaces we use them as classes
+				//this.insert(this.implementsRelations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation("java+interface", jarFile, "/" + iface));
+				this.insert(this.implementsRelations, values.sourceLocation("java+class", jarFile, "/" + cn.name), values.sourceLocation("java+class", jarFile, "/" + iface));
 			}
 			
 			emitMethods(cn.methods);
