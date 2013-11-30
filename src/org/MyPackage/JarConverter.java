@@ -75,7 +75,16 @@ public class JarConverter extends M3Converter {
 				MethodNode method = methods.get(i);
 				System.out.println(new String("Signature :" ) + method.name + " "  + method.signature + method.desc) ;
 				
-				JarConverter.this.insert(JarConverter.this.declarations, values.sourceLocation("java+method", jarFile, "/" + method.name), values.sourceLocation(jarFile));
+                //Get the name of the class or interface
+				String cName = ClassFile.replace(".class", "");
+                
+                //Get the prototype of the method
+				String prototype = method.name + method.desc; 
+                
+                //Add method to declarations
+				JarConverter.this.insert(JarConverter.this.declarations, values.sourceLocation("java+method", jarFile, "/"+ cName+"/"+prototype), values.sourceLocation(jarFile));
+				//Add method to containment
+				JarConverter.this.insert(JarConverter.this.containment, values.sourceLocation("java+class", jarFile, "/"+cName), values.sourceLocation("java+method", jarFile, "/"+ cName+"/"+prototype));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
